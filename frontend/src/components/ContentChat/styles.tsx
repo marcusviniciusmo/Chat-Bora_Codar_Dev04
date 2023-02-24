@@ -4,6 +4,6 @@ export const Container = styled.div``;
 
 export const Content = styled.div`
   width: var(--max-width-chat);
-  height: 60rem;
+  height: 49rem;
   overflow-y: scroll;
 `;

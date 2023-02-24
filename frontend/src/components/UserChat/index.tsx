@@ -1,12 +1,11 @@
 import { UserInfo } from "../UserInfo";
 import { ContentChat } from "../ContentChat";
 import ContactAvatar from '../../assets/userCecilia.png';
+import { Container } from "./styles";
 
 export function UserChat() {
   return (
-    <>
-      <h1>USER CHAT Component</h1>
-
+    <Container>
       <UserInfo
         background={ContactAvatar}
         contactName='Cecilia Sassaki'
@@ -14,6 +13,6 @@ export function UserChat() {
       />
 
       <ContentChat />
-    </>
+    </Container>
   );
 };
