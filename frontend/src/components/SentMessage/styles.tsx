@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 88rem;
+  width: var(--max-width-chat);
   height: 6.6rem;
   margin-top: 2rem;
   padding: 0rem;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 88rem;
+  width: var(--max-width-chat);
   height: 7.6rem;
   padding: 2.4rem 0rem 0rem;
   display: flex;
@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 export const Message = styled.div`
   background: var(--background-input-send);
-  width: 88rem;
+  width: var(--max-width-chat);
   height: 5.2rem;
   padding: 1.4rem 2.4rem;
   border-radius: 99.9rem;

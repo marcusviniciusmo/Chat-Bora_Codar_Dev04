@@ -4,6 +4,11 @@
   --background: #1A1924;
   --color: #E1E1E6;
 
+  --max-width-chat: 88rem;
+
+  --color-online: #00B37E;
+  --color-offline: #E3E3E3;
+
   --background-input-send: #282843;
   --color-text-input: #E1E1E6;
 
