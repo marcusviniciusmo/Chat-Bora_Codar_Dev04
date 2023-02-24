@@ -1,5 +1,10 @@
+import IconSend from '../../assets/buttonSend.png';
+import { Container, Icon } from "./styles";
+
 export function Button() {
   return (
-    <h1>BUTTON Component</h1>
+    <Container>
+      <Icon src={IconSend} title='Send' />
+    </Container>
   );
 };
