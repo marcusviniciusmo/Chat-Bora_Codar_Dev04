@@ -3,6 +3,9 @@
 :root {
   --background: #1A1924;
 
+  --background-input-send: #282843;
+  --color-text-input: #E1E1E6;
+
   font-size: 62.5%; /* 1rem = 10px */
 }
 

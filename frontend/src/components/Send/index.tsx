@@ -1,11 +1,14 @@
 import { Button } from "../Button";
+import { Container, Message, Input } from "./styles";
 
 export function Send() {
   return (
-    <>
-      <h1>SEND Component</h1>
+    <Container>
+      <Message>
+        <Input placeholder='Digite sua mensagem' />
 
-      <Button />
-    </>
+        <Button />
+      </Message>
+    </Container>
   );
 };
