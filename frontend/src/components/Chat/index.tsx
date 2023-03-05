@@ -1,14 +1,13 @@
 import { Users } from "../Users";
 import { UserChat } from "../UserChat";
+import { Container } from "./styles";
 
 export function Chat() {
   return (
-    <>
-      <h1>CHAT Component</h1>
-
+    <Container>
       <Users />
 
       <UserChat />
-    </>
+    </Container>
   );
 };
