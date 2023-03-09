@@ -1,23 +1,35 @@
 import { useEffect, useState } from 'react';
+import { SearchUser } from '../SearchUser';
 import { UsersProps } from '../../types/Users';
 import { MockedData } from '../../mocks/Users';
 import * as Styles from "./styles";
 
 export function Users() {
   const [mockedData, setMockedData] = useState<UsersProps[]>([]);
+  const [inputSearch, setInputSearch] = useState<string>('');
 
   useEffect(() => {
     setMockedData(MockedData);
   }, []);
 
+  const handleInput = (e: any) => {
+    setInputSearch(e.target.value);
+  };
+
+  const filteredData = mockedData.filter((user) => {
+    return user.name.toLowerCase().includes(inputSearch.toLowerCase()) ||
+      user.lastMessage.toLowerCase().includes(inputSearch.toLowerCase());
+  });
+
   return (
     <Styles.Container>
-      <h1>USERS Component</h1>
-
-      <h1>SearchUser</h1>
+      <SearchUser
+        input={inputSearch}
+        setInput={() => handleInput}
+      />
 
       {
-        mockedData.map((user) => {
+        filteredData.map((user) => {
           return (
             <Styles.UserContainer key={user.id}>
               <Styles.Avatar src={user.avatar} />
