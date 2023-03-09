@@ -31,7 +31,11 @@ export function Users() {
       {
         filteredData.map((user) => {
           return (
-            <Styles.UserContainer key={user.id}>
+            <Styles.UserContainer
+              key={user.id}
+              className={inputSearch && 'inputFilled'}
+              title={user.name}
+            >
               <Styles.Avatar src={user.avatar} />
 
               <Styles.Info>

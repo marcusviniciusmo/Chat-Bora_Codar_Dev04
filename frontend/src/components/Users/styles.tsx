@@ -19,6 +19,14 @@ export const UserContainer = styled.div`
   align-items: center;
   gap: 3rem;
   cursor: pointer;
+
+  &.inputFilled {
+    opacity: 0.3;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 export const Avatar = styled.img`
