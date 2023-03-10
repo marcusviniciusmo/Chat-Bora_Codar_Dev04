@@ -1,5 +1,9 @@
+import { Container, Message } from "./styles";
+
 export function UserNotFound() {
   return (
-    <h1>USER NOT FOUND Component</h1>
+    <Container>
+      <Message>No chats or messages found</Message>
+    </Container>
   );
 };
