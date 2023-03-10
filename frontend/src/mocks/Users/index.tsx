@@ -1,14 +1,15 @@
-import { UsersProps } from "../../types/Users";
+import { UsersMocks } from "../../types/Users";
 import AvatarCecilia from '../../assets/userCecilia.png';
 
-export const MockedData: UsersProps[] = [
+export const MockedData: UsersMocks[] = [
   {
     id: 1,
     avatar: AvatarCecilia,
     name: 'Cecilia Sassaki',
     user: 'Você: ',
     lastMessage: '#boraCodar! 🚀',
-    date: 'Yesterday'
+    date: 'Yesterday',
+    statusOnline: true
   },
   {
     id: 2,
@@ -16,7 +17,8 @@ export const MockedData: UsersProps[] = [
     name: 'Cecilia Sassaki 2',
     user: 'Você: ',
     lastMessage: 'Tchau',
-    date: '2 days ago'
+    date: '2 days ago',
+    statusOnline: false
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ export const MockedData: UsersProps[] = [
     name: 'Cecilia - Antigo',
     user: 'Você: ',
     lastMessage: 'Ok. Vou adicionar',
-    date: '1 week ago'
+    date: '1 week ago',
+    statusOnline: false
   }
 ];

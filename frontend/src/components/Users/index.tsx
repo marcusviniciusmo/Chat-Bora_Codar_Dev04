@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { SearchUser } from '../SearchUser';
 import { UserNotFound } from '../UserNotFound';
-import { UsersProps } from '../../types/Users';
+import { UsersMocks, UsersProps } from '../../types/Users';
 import { MockedData } from '../../mocks/Users';
 import * as Styles from "./styles";
 
-export function Users() {
-  const [mockedData, setMockedData] = useState<UsersProps[]>([]);
+export function Users(props: UsersProps) {
+  const [mockedData, setMockedData] = useState<UsersMocks[]>([]);
   const [inputSearch, setInputSearch] = useState<string>('');
 
   useEffect(() => {
@@ -21,6 +21,10 @@ export function Users() {
     return user.name.toLowerCase().includes(inputSearch.toLowerCase()) ||
       user.lastMessage.toLowerCase().includes(inputSearch.toLowerCase());
   });
+
+  const selectUser = (user: UsersMocks) => {
+    props.setUser(user);
+  };
 
   return (
     <Styles.Container>
@@ -37,6 +41,7 @@ export function Users() {
               key={user.id}
               className={inputSearch && 'inputFilled'}
               title={user.name}
+              onClick={() => selectUser(user)}
             >
               <Styles.Avatar src={user.avatar} />
 

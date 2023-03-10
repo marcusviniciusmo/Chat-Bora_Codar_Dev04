@@ -1,15 +1,15 @@
 import { UserInfo } from "../UserInfo";
 import { ContentChat } from "../ContentChat";
-import ContactAvatar from '../../assets/userCecilia.png';
 import { Container } from "./styles";
+import { UserChatProps } from "../../types/UserChat";
 
-export function UserChat() {
+export function UserChat(props: UserChatProps) {
   return (
     <Container>
       <UserInfo
-        background={ContactAvatar}
-        contactName='Cecilia Sassaki'
-        status='online'
+        background={props.user!?.avatar}
+        contactName={props.user!?.name}
+        status={props.user!?.statusOnline ? 'online' : 'offline'}
       />
 
       <ContentChat />
