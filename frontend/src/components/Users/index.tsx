@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { SearchUser } from '../SearchUser';
+import { UserNotFound } from '../UserNotFound';
 import { UsersProps } from '../../types/Users';
 import { MockedData } from '../../mocks/Users';
 import * as Styles from "./styles";
@@ -29,7 +30,8 @@ export function Users() {
       />
 
       {
-        filteredData.map((user) => {
+        filteredData.length > 0
+        ? filteredData.map((user) => {
           return (
             <Styles.UserContainer
               key={user.id}
@@ -52,6 +54,7 @@ export function Users() {
             </Styles.UserContainer>
           )
         })
+        : <UserNotFound />
       }
     </Styles.Container>
   );
