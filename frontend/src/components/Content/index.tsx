@@ -1,5 +1,6 @@
 import { ContactInfo } from "../ContactInfo";
 import { Historic } from "../Historic";
+import { Send } from "../Send";
 
 export function Content() {
   return (
@@ -11,8 +12,7 @@ export function Content() {
 
       <Historic />
 
-      <h6>Digite sua mensagem</h6>
-      <h3>AQUI VAI UM BOTAO - ENVIAR</h3>
+      <Send />
     </>
   );
 };
