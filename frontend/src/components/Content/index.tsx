@@ -1,11 +1,11 @@
+import { ContactInfo } from "../ContactInfo";
+
 export function Content() {
   return (
     <>
       <h1>CONTENT Component</h1>
 
-      <h3>AQUI VAI UMA FOTO</h3>
-      <h4>Cecilia Sassaki</h4>
-      <h5>Online</h5>
+      <ContactInfo />
       <h3>AQUI VAI UM BOTAO - Close</h3>
 
       <h6>Hoje 11:30</h6>
