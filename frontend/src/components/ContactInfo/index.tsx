@@ -1,13 +1,30 @@
+import ContactAvatar from '../../assets/contactAvatar.png';
+import CloseIcon from '../../assets/closeIcon.png';
+import * as Styles from "./styles";
+
 export function ContactInfo() {
   return (
-    <>
-      <h1>CONTACT INFO Component</h1>
+    <Styles.Container>
+      <Styles.Content>
+        <Styles.Avatar>
+          <Styles.ContactImg src={ContactAvatar} />
+        </Styles.Avatar>
 
-      <h3>AQUI VAI UMA FOTO</h3>
-      <h4>Cecilia Sassaki</h4>
-      <h5>Online</h5>
+        <Styles.Info>
+          <Styles.Name>Cecilia Sassaki</Styles.Name>
 
-      <h3>AQUI VAI UM BOTAO - Close</h3>
-    </>
+          <Styles.Status>
+            <Styles.Ellipse />
+            <Styles.Description>Online</Styles.Description>
+          </Styles.Status>
+        </Styles.Info>
+
+        <Styles.Close>
+          <Styles.Icon src={CloseIcon} title='Close' />
+        </Styles.Close>
+      </Styles.Content>
+
+      <Styles.DateTime>11:30</Styles.DateTime>
+    </Styles.Container>
   );
 };

@@ -4,6 +4,10 @@
   --background: #1A1924;
   --color: #E1E1E6;
 
+  --width-chat-window: 88rem;
+
+  --color-status-online: #00B37E;
+
   font-size: 62.5% /* 1rem = 10px */;
 }
 

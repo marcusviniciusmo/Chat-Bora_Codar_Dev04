@@ -3,8 +3,6 @@ export function Historic() {
     <>
       <h1>HISTORIC Component</h1>
 
-      <h6>Hoje 11:30</h6>
-
       <h4>Cecilia - 11:30</h4>
       <h5>Tive uma ideia incrível para um projeto!😍</h5>
 
