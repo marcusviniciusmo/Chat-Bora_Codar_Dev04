@@ -8,6 +8,9 @@
 
   --color-status-online: #00B37E;
 
+  --background-message-contact: #633BBC;
+  --background-message-user: #07847E;
+
   font-size: 62.5% /* 1rem = 10px */;
 }
 
