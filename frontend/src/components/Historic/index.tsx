@@ -1,10 +1,9 @@
-import { SentMessage } from "../SentMessage"
+import { SentMessage } from "../SentMessage";
+import { Container } from "./styles";
 
 export function Historic() {
   return (
-    <>
-      <h1>HISTORIC Component</h1>
-
+    <Container>
       <SentMessage
         sender='Cecilia'
         time='11:30'
@@ -26,6 +25,6 @@ export function Historic() {
         time='11:36'
         message='#boraCodar!🚀'
       />
-    </>
+    </Container>
   );
 };
