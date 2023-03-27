@@ -11,6 +11,8 @@
   --background-message-contact: #633BBC;
   --background-message-user: #07847E;
 
+  --background-input-send: #282843;
+
   font-size: 62.5% /* 1rem = 10px */;
 }
 

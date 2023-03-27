@@ -1,10 +1,17 @@
+import { Container, Field, Button, Icon } from "./styles";
+import SendIcon from '../../assets/sendIcon.png';
+
 export function Send() {
   return (
-    <>
-      <h1>SEND Component</h1>
+    <Container>
+      <Field
+        type='text'
+        placeholder='Digite sua mensagem'
+      />
 
-      <h6>Digite sua mensagem</h6>
-      <h3>AQUI VAI UM BOTAO - ENVIAR</h3>
-    </>
+      <Button>
+        <Icon src={SendIcon} title='Send' />
+      </Button>
+    </Container>
   );
 };
