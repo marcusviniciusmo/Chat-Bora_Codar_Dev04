@@ -1,3 +1,7 @@
 // Styled Components
 npm i styled-components
 npm i @types/styled-components
+
+// Material UI Icons
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
