@@ -1,3 +1,5 @@
+import { Container, Input } from "./styles";
+
 type SearchProps = {
   inputSearch: string;
   setInput: Function;
@@ -5,14 +7,13 @@ type SearchProps = {
 
 export function Search(props: SearchProps) {
   return (
-    <>
-      <h1>SEARCH Component</h1>
-
-      <input
+    <Container>
+      <Input
         type='text'
+        placeholder='Search a user or a message'
         value={props.inputSearch}
         onChange={e => props.setInput(e.target.value)}
       />
-    </>
+    </Container>
   );
 };
