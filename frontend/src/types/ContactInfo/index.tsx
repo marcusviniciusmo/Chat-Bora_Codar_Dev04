@@ -8,4 +8,6 @@ export interface ContactInfoProps {
   name: string;
   status: string;
   time: string;
+  chatContent: boolean;
+  setChatContent: Function;
 };

@@ -6,6 +6,10 @@ import { useEffect, useState } from 'react';
 export function ContactInfo(props: ContactInfoProps) {
   const [mockedData, setMockedData] = useState<ContactInfoMocks>();
 
+  const setContent = () => {
+    props.setChatContent(!props.chatContent);
+  };
+
   useEffect(() => {
     setMockedData(MockedData);
   }, []);
@@ -30,6 +34,7 @@ export function ContactInfo(props: ContactInfoProps) {
           <Styles.Icon
             src={mockedData?.icon}
             title={mockedData?.titleIcon}
+            onClick={setContent}
           />
         </Styles.Close>
       </Styles.Content>
