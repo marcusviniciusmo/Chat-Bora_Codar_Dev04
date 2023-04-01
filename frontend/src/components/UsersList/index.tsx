@@ -1,5 +1,7 @@
+import ContactPhoto from '../../assets/contactAvatar.png';
 import { useState } from "react";
 import { Search } from "../Search";
+import * as Styles from "./styles";
 
 export function UsersList() {
   const [inputSearch, setInputSearch] = useState<string>('');
@@ -7,36 +9,63 @@ export function UsersList() {
   const contacts = [
     {
       id: 1,
-      name: 'Cecilia'
+      name: 'Cecilia',
+      avatar: ContactPhoto,
+      lastMessage: '#boraCodar!🚀',
+      date: 'Yesterdary'
     }, {
       id: 2,
-      name: 'Cecilia 2'
+      name: 'Cecilia 2',
+      avatar: ContactPhoto,
+      lastMessage: '#boraCodar!🚀',
+      date: 'Yesterdary'
     }, {
       id: 3,
-      name: 'Cecilia - Antigo'
+      name: 'Cecilia - Antigo',
+      avatar: '',
+      lastMessage: '#boraCodar!🚀',
+      date: 'Yesterdary'
     }, {
       id: 4,
-      name: 'Amor'
+      name: 'Amor',
+      avatar: '',
+      lastMessage: '#bora!🚀',
+      date: 'Yesterdary'
     }
   ];
 
   const filteredList = contacts.filter((item) => {
-    return item.name.toLowerCase().includes(inputSearch.toLowerCase())
+    const name = item.name.toLowerCase().includes(inputSearch.toLowerCase());
+
+    const lastMessage = item.lastMessage.toLowerCase().includes(inputSearch.toLowerCase());
+
+    return name || lastMessage;
   });
 
   return (
-    <>
-      <h1>USERS LIST Component</h1>
-
+    <Styles.Container>
       <Search inputSearch={inputSearch} setInput={setInputSearch} />
 
       {
         filteredList.map((contact) => {
           return (
-            <span key={contact.id}>{contact.name}</span>
+            <Styles.UserContainer
+              key={contact.id}
+              title={contact.name}
+            >
+              <Styles.UserAvatar src={contact.avatar} />
+
+              <Styles.Info>
+                <Styles.Name>{contact.name}</Styles.Name>
+
+                <Styles.Message>{contact.lastMessage}</Styles.Message>
+              </Styles.Info>
+
+              <Styles.DateTime>{contact.date}</Styles.DateTime>
+            </Styles.UserContainer>
           )
         })
       }
-    </>
+    </Styles.Container>
   );
 };

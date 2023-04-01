@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const Input = styled.input`
-  background: var(--background-input-send);
+  background: var(--background-secondary);
   color: var(--color);
   font-size: 1.4rem;
   height: 4rem;
