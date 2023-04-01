@@ -1,6 +1,7 @@
 import ContactPhoto from '../../assets/contactAvatar.png';
 import { useState } from "react";
 import { Search } from "../Search";
+import { NoUser } from '../NoUser';
 import * as Styles from "./styles";
 
 export function UsersList() {
@@ -47,7 +48,8 @@ export function UsersList() {
       <Search inputSearch={inputSearch} setInput={setInputSearch} />
 
       {
-        filteredList.map((contact) => {
+        filteredList. length > 0
+        ? filteredList.map((contact) => {
           return (
             <Styles.UserContainer
               key={contact.id}
@@ -65,6 +67,7 @@ export function UsersList() {
             </Styles.UserContainer>
           )
         })
+        : <NoUser />
       }
     </Styles.Container>
   );
