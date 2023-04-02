@@ -1,16 +1,27 @@
+import { useEffect, useState } from 'react';
+import { SendMocks } from '../../types/Send';
+import { MockedData } from '../../mocks/Send';
 import { Container, Field, Button, Icon } from "./styles";
-import SendIcon from '../../assets/sendIcon.png';
 
 export function Send() {
+  const [mockedData, setMockedData] = useState<SendMocks>();
+
+  useEffect(() => {
+    setMockedData(MockedData);
+  }, []);
+
   return (
     <Container>
       <Field
-        type='text'
-        placeholder='Digite sua mensagem'
+        type={mockedData?.typeField}
+        placeholder={mockedData?.placeholder}
       />
 
       <Button>
-        <Icon src={SendIcon} title='Send' />
+        <Icon
+          src={mockedData?.buttonIcon}
+          title={mockedData?.buttonTitle}
+        />
       </Button>
     </Container>
   );

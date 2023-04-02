@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react';
 import { ContactInfoMocks, ContactInfoProps } from '../../types/ContactInfo';
 import { MockedData } from '../../mocks/ContactInfo';
 import * as Styles from "./styles";
-import { useEffect, useState } from 'react';
 
 export function ContactInfo(props: ContactInfoProps) {
   const [mockedData, setMockedData] = useState<ContactInfoMocks>();
