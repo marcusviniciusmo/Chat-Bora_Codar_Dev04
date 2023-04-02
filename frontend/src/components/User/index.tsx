@@ -1,24 +1,30 @@
+import { useEffect, useState } from 'react';
+import { UserMocks } from '../../types/User';
+import { MockedData } from '../../mocks/User';
 import { Container, Content, Avatar, Icons, Icon } from "./styles";
-import { Refresh, Chat, Settings } from '@mui/icons-material';
 
 export function User() {
+  const [mockedData, setMockedData] = useState<UserMocks[]>([]);
+
+  useEffect(() => {
+    setMockedData(MockedData);
+  }, []);
+
   return (
     <Container>
       <Content>
         <Avatar>NO PHOTO</Avatar>
 
         <Icons>
-          <Icon>
-            <Refresh titleAccess='Atualizar' />
-          </Icon>
-
-          <Icon>
-            <Chat titleAccess='Nova conversa' />
-          </Icon>
-
-          <Icon>
-            <Settings titleAccess='Configuraçōes' />
-          </Icon>
+          {
+            mockedData.map((icon) => {
+              return (
+                <Icon>
+                  <icon.icon titleAccess={icon.title} />
+                </Icon>
+              )
+            })
+          }
         </Icons>
       </Content>
     </Container>
