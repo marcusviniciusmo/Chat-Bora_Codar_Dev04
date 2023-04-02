@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Search } from "../Search";
 import { NoUser } from '../NoUser';
-import { UsersListMocks } from '../../types/UsersList';
+import { UsersListMocks, UsersListProps } from '../../types/UsersList';
 import { MockedData } from '../../mocks/UsersList';
 import * as Styles from "./styles";
 
-export function UsersList() {
+export function UsersList(props: UsersListProps) {
   const [mockedData, setMockedData] = useState<UsersListMocks[]>([]);
   const [inputSearch, setInputSearch] = useState<string>('');
 
@@ -30,6 +30,10 @@ export function UsersList() {
     return contact.messages[contact.messages.length - 1].date;
   };
 
+  const setChatContact = (contact: UsersListMocks) => {
+    props.setContactSelected(contact);
+  };
+
   return (
     <Styles.Container>
       <Search inputSearch={inputSearch} setInput={setInputSearch} />
@@ -41,6 +45,7 @@ export function UsersList() {
             <Styles.UserContainer
               key={contact.id}
               title={contact.name}
+              onClick={() => setChatContact(contact)}
             >
               <Styles.UserAvatar src={contact.avatar} />
 

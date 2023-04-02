@@ -6,6 +6,7 @@ export const MockedData: UsersListMocks[] = [
     id: 1,
     name: 'Cecilia Sassaki',
     avatar: ContactPhoto,
+    status: 'Online',
     messages: [
       {
         id: 1,
@@ -39,6 +40,7 @@ export const MockedData: UsersListMocks[] = [
     id: 2,
     name: 'Cecilia Sassaki 2',
     avatar: ContactPhoto,
+    status: 'Offline',
     messages: [
       {
         id: 1,
@@ -59,6 +61,7 @@ export const MockedData: UsersListMocks[] = [
     id: 3,
     name: 'Cecilia Sassaki - Antigo',
     avatar: '',
+    status: 'Offline',
     messages: [
       {
         id: 1,
@@ -79,6 +82,7 @@ export const MockedData: UsersListMocks[] = [
     id: 4,
     name: 'Amor',
     avatar: '',
+    status: 'Offline',
     messages: [
       {
         id: 1,

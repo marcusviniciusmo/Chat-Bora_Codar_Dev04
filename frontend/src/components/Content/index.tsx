@@ -6,8 +6,28 @@ import { NoChat } from '../NoChat';
 import { Send } from "../Send";
 import { Container } from "./styles";
 
-export function Content() {
+type ContentProps = {
+  contactSelected: {
+    id: number;
+    name: string;
+    avatar: string;
+    status: string;
+    messages: {
+      id: number;
+      sender?: string;
+      message: string;
+      date: string;
+      time: string;
+    }[];
+  };
+};
+
+export function Content(props: ContentProps) {
   const [chatContent, setChatContent] = useState<boolean>(true);
+
+  const getTimeFromLastMessage = () => {
+    return props.contactSelected.messages[props.contactSelected.messages.length - 1].time;
+  };
 
   return (
     <Container>
@@ -15,15 +35,17 @@ export function Content() {
         chatContent
           ? <>
             <ContactInfo
-              avatar={ContactAvatar}
-              name='Cecilia Sassaki'
-              status='Online'
-              time='11:30'
+              avatar={props.contactSelected.avatar}
+              name={props.contactSelected.name}
+              status={props.contactSelected.status}
+              time={getTimeFromLastMessage()}
               chatContent={chatContent}
               setChatContent={setChatContent}
             />
 
-            <Historic />
+            <Historic
+              messagesContactSelected={props.contactSelected.messages}
+            />
 
             <Send />
 
