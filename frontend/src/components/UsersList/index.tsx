@@ -1,47 +1,33 @@
-import ContactPhoto from '../../assets/contactAvatar.png';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Search } from "../Search";
 import { NoUser } from '../NoUser';
+import { UsersListMocks } from '../../types/UsersList';
+import { MockedData } from '../../mocks/UsersList';
 import * as Styles from "./styles";
 
 export function UsersList() {
+  const [mockedData, setMockedData] = useState<UsersListMocks[]>([]);
   const [inputSearch, setInputSearch] = useState<string>('');
 
-  const contacts = [
-    {
-      id: 1,
-      name: 'Cecilia',
-      avatar: ContactPhoto,
-      lastMessage: '#boraCodar!🚀',
-      date: 'Yesterdary'
-    }, {
-      id: 2,
-      name: 'Cecilia 2',
-      avatar: ContactPhoto,
-      lastMessage: '#boraCodar!🚀',
-      date: 'Yesterdary'
-    }, {
-      id: 3,
-      name: 'Cecilia - Antigo',
-      avatar: '',
-      lastMessage: '#boraCodar!🚀',
-      date: 'Yesterdary'
-    }, {
-      id: 4,
-      name: 'Amor',
-      avatar: '',
-      lastMessage: '#bora!🚀',
-      date: 'Yesterdary'
-    }
-  ];
+  useEffect(() => {
+    setMockedData(MockedData);
+  }, []);
 
-  const filteredList = contacts.filter((item) => {
+  const filteredList = mockedData.filter((item) => {
     const name = item.name.toLowerCase().includes(inputSearch.toLowerCase());
 
-    const lastMessage = item.lastMessage.toLowerCase().includes(inputSearch.toLowerCase());
+    const lastMessage = item.messages[item.messages.length - 1].message.toLowerCase().includes(inputSearch.toLowerCase());
 
     return name || lastMessage;
   });
+
+  const getLastMessage = (contact: UsersListMocks) => {
+    return contact.messages[contact.messages.length - 1].message;
+  };
+
+  const getDateFromMessage = (contact: UsersListMocks) => {
+    return contact.messages[contact.messages.length - 1].date;
+  };
 
   return (
     <Styles.Container>
@@ -60,10 +46,10 @@ export function UsersList() {
               <Styles.Info>
                 <Styles.Name>{contact.name}</Styles.Name>
 
-                <Styles.Message>{contact.lastMessage}</Styles.Message>
+                <Styles.Message>{getLastMessage(contact)}</Styles.Message>
               </Styles.Info>
 
-              <Styles.DateTime>{contact.date}</Styles.DateTime>
+              <Styles.DateTime>{getDateFromMessage(contact)}</Styles.DateTime>
             </Styles.UserContainer>
           )
         })
