@@ -16,7 +16,8 @@ export function UsersList() {
   const filteredList = mockedData.filter((item) => {
     const name = item.name.toLowerCase().includes(inputSearch.toLowerCase());
 
-    const lastMessage = item.messages[item.messages.length - 1].message.toLowerCase().includes(inputSearch.toLowerCase());
+    const lastMessage = item.messages[item.messages.length - 1].message.
+    toLowerCase().includes(inputSearch.toLowerCase());
 
     return name || lastMessage;
   });
