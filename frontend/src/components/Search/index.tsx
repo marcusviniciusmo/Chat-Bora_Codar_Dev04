@@ -1,16 +1,20 @@
+import { useEffect, useState } from "react";
+import { SearchMocks, SearchProps } from "../../types/Search";
+import { MockedData } from "../../mocks/Search";
 import { Container, Input } from "./styles";
 
-type SearchProps = {
-  inputSearch: string;
-  setInput: Function;
-};
-
 export function Search(props: SearchProps) {
+  const [mockedData, setMockedData] = useState<SearchMocks>();
+
+  useEffect(() => {
+    setMockedData(MockedData);
+  }, []);
+
   return (
     <Container>
       <Input
-        type='text'
-        placeholder='Search a user or a message'
+        type={mockedData?.typeField}
+        placeholder={mockedData?.placeholder}
         value={props.inputSearch}
         onChange={e => props.setInput(e.target.value)}
       />
