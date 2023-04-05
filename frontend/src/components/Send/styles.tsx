@@ -9,7 +9,8 @@ export const Container = styled.div`
   align-items: flex-start;
   align-self: stretch;
   gap: 1rem;
-  position: relative;
+  position: absolute;
+  top: 62.5%;
 `;
 
 export const Field = styled.input`
