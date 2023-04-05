@@ -32,6 +32,7 @@ export function UsersList(props: UsersListProps) {
 
   const setChatContact = (contact: UsersListMocks) => {
     props.setContactSelected(contact);
+    props.setChatContent(true);
   };
 
   return (

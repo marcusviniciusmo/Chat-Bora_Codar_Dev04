@@ -27,4 +27,5 @@ export interface UsersListProps {
     }[];
   };
   setContactSelected: Function;
+  setChatContent:Function;
 };

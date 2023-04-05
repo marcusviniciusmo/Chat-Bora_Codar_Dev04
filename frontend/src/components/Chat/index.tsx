@@ -5,6 +5,7 @@ import { UsersList } from "../UsersList";
 import { Container, UserArea } from "./styles";
 
 export function Chat() {
+  const [chatContent, setChatContent] = useState<boolean>(false);
   const [contactSelected, setContactSelected] = useState({
     id: 1,
     name: 'Cecilia Sassaki',
@@ -27,12 +28,15 @@ export function Chat() {
         <User />
 
         <UsersList
+          setChatContent={setChatContent}
           contactSelected={contactSelected}
           setContactSelected={setContactSelected}
         />
       </UserArea>
 
       <Content
+        chatContent={chatContent}
+        setChatContent={setChatContent}
         contactSelected={contactSelected}
       />
     </Container>

@@ -20,27 +20,28 @@ type ContentProps = {
       time: string;
     }[];
   };
+  chatContent: boolean;
+  setChatContent: Function;
 };
 
 export function Content(props: ContentProps) {
-  const [chatContent, setChatContent] = useState<boolean>(true);
-
   const getTimeFromLastMessage = () => {
-    return props.contactSelected.messages[props.contactSelected.messages.length - 1].time;
+    return props.contactSelected.
+    messages[props.contactSelected.messages.length - 1].time;
   };
 
   return (
     <Container>
       {
-        chatContent
+        props.chatContent
           ? <>
             <ContactInfo
               avatar={props.contactSelected.avatar}
               name={props.contactSelected.name}
               status={props.contactSelected.status}
               time={getTimeFromLastMessage()}
-              chatContent={chatContent}
-              setChatContent={setChatContent}
+              chatContent={props.chatContent}
+              setChatContent={props.setChatContent}
             />
 
             <Historic
