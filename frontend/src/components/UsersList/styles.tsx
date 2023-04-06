@@ -23,13 +23,6 @@ export const UserContainer = styled.div`
   }
 `;
 
-export const UserAvatar = styled.img`
-  background: var(--background-no-photo);
-  width: 4.8rem;
-  height: 4.8rem;
-  border-radius: 50%;
-`;
-
 export const Info = styled.div`
   width: 17rem;
   display: flex;

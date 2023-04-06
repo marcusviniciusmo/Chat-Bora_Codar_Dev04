@@ -18,20 +18,6 @@ export const Content = styled.div`
   gap: 2rem;
 `;
 
-export const Avatar = styled.div`
-  background: gray;
-  font-size: 1.1rem;
-  font-weight: 700;
-  width: 4.8rem;
-  height: 4.8rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
-`;
-
 export const Icons = styled.div`
   padding-right: 2.5rem;
   display: flex;

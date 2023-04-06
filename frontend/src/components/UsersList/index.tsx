@@ -4,6 +4,7 @@ import { NoUser } from '../NoUser';
 import { UsersListMocks, UsersListProps } from '../../types/UsersList';
 import { MockedData } from '../../mocks/UsersList';
 import * as Styles from "./styles";
+import { Avatar } from "../Avatar";
 
 export function UsersList(props: UsersListProps) {
   const [mockedData, setMockedData] = useState<UsersListMocks[]>([]);
@@ -48,7 +49,7 @@ export function UsersList(props: UsersListProps) {
               title={contact.name}
               onClick={() => setChatContact(contact)}
             >
-              <Styles.UserAvatar src={contact.avatar} />
+              <Avatar imageUrl={contact.avatar} />
 
               <Styles.Info>
                 <Styles.Name>{contact.name}</Styles.Name>

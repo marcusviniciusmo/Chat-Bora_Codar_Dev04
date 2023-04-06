@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Avatar } from '../Avatar';
 import { ContactInfoMocks, ContactInfoProps } from '../../types/ContactInfo';
 import { MockedData } from '../../mocks/ContactInfo';
 import * as Styles from "./styles";
@@ -17,9 +18,7 @@ export function ContactInfo(props: ContactInfoProps) {
   return (
     <Styles.Container>
       <Styles.Content>
-        <Styles.Avatar>
-          <Styles.ContactImg src={props.avatar} />
-        </Styles.Avatar>
+        <Avatar imageUrl={props.avatar} />
 
         <Styles.Info>
           <Styles.Name>{props.name}</Styles.Name>

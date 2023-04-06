@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
+import { Avatar } from '../Avatar';
 import { UserMocks } from '../../types/User';
 import { MockedData } from '../../mocks/User';
-import { Container, Content, Avatar, Icons, Icon } from "./styles";
+import { Container, Content, Icons, Icon } from "./styles";
 
 export function User() {
   const [mockedData, setMockedData] = useState<UserMocks[]>([]);
@@ -13,7 +14,7 @@ export function User() {
   return (
     <Container>
       <Content>
-        <Avatar>NO PHOTO</Avatar>
+        <Avatar />
 
         <Icons>
           {

@@ -22,15 +22,6 @@ export const Content = styled.div`
   gap: 1.6rem;
 `;
 
-export const Avatar = styled.div`
-  width: 4.8rem;
-  height: 4.8rem;
-`;
-
-export const ContactImg = styled.img`
-  border-radius: 50%;
-`;
-
 export const Info = styled.div`
   width: 78rem;
   height: 3.7rem;
