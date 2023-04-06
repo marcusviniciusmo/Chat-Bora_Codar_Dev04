@@ -1,5 +1,12 @@
+import ChatLogo from '../../assets/chatLogo.png';
+import { Container, Logo, Title, Text } from './styles';
+
 export function NoChat() {
   return (
-    <h1>NO CHAT Component</h1>
+    <Container>
+      <Logo src={ChatLogo} />
+      <Title>Chat Web</Title>
+      <Text>Send or receive messages from your contacts.</Text>
+    </Container>
   );
 };
