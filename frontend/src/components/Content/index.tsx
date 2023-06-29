@@ -1,28 +1,9 @@
-import { useState } from 'react';
-import ContactAvatar from '../../assets/contactAvatar.png';
 import { ContactInfo } from "../ContactInfo";
 import { Historic } from "../Historic";
 import { NoChat } from '../NoChat';
 import { Send } from "../Send";
+import { ContentProps } from "../../types/Content";
 import { Container } from "./styles";
-
-type ContentProps = {
-  contactSelected: {
-    id: number;
-    name: string;
-    avatar: string;
-    status: string;
-    messages: {
-      id: number;
-      sender?: string;
-      message: string;
-      date: string;
-      time: string;
-    }[];
-  };
-  chatContent: boolean;
-  setChatContent: Function;
-};
 
 export function Content(props: ContentProps) {
   const getTimeFromLastMessage = () => {
