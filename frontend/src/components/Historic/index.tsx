@@ -1,15 +1,6 @@
 import { SentMessage } from "../SentMessage";
+import { HistoricProps } from "../../types/Historic";
 import { Container } from "./styles";
-
-type HistoricProps = {
-  messagesContactSelected: {
-    id: number;
-    sender?: string;
-    message: string;
-    date: string;
-    time: string;
-  }[];
-};
 
 export function Historic(props: HistoricProps) {
   return (
