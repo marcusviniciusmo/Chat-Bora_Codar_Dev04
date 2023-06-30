@@ -20,7 +20,9 @@ export function User() {
           {
             mockedData.map((icon) => {
               return (
-                <Icon>
+                <Icon
+                  key={icon.id}
+                >
                   <icon.icon titleAccess={icon.title} />
                 </Icon>
               )
