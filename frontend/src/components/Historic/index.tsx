@@ -9,6 +9,7 @@ export function Historic(props: HistoricProps) {
         props.messagesContactSelected.map((message) => {
           return (
             <SentMessage
+              key={message.id}
               sender={message.sender}
               time={message.time}
               message={message.message}
