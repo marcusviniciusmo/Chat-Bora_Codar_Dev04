@@ -1,14 +1,33 @@
+import { useEffect, useState } from "react";
 import { ContactInfo } from "../ContactInfo";
 import { Historic } from "../Historic";
 import { NoChat } from '../NoChat';
 import { Send } from "../Send";
-import { ContentProps } from "../../types/Content";
+import { ContentProps, ContentMessagesHistoricProps } from "../../types/Content";
 import { Container } from "./styles";
 
 export function Content(props: ContentProps) {
+  const [messagesList, setMessagesList] = useState<ContentMessagesHistoricProps[]>([]);
+
+  useEffect(() => {
+    setMessagesList(props.contactSelected.messages);
+  }, [props.contactSelected.messages]);
+
   const getTimeFromLastMessage = () => {
     return props.contactSelected.
     messages[props.contactSelected.messages.length - 1].time;
+  };
+
+  const sendMessage = (message: string) => {
+    const newMessage:ContentMessagesHistoricProps = {
+      id: messagesList.length + 1,
+      message: message,
+      date: '',
+      time: ''
+    };
+
+    const updateMessages = [...messagesList, newMessage];
+    setMessagesList(updateMessages);
   };
 
   return (
@@ -26,10 +45,10 @@ export function Content(props: ContentProps) {
             />
 
             <Historic
-              messagesContactSelected={props.contactSelected.messages}
+              messages={messagesList!}
             />
 
-            <Send />
+            <Send onMessageSend={sendMessage} />
 
           </>
           : <NoChat />

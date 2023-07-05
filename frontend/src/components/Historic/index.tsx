@@ -6,7 +6,7 @@ export function Historic(props: HistoricProps) {
   return (
     <Container>
       {
-        props.messagesContactSelected.map((message) => {
+        props.messages.map((message) => {
           return (
             <SentMessage
               key={message.id}

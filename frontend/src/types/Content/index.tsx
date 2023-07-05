@@ -4,14 +4,16 @@ export interface ContentProps {
     name: string;
     avatar: string;
     status: string;
-    messages: {
-      id: number;
-      sender?: string;
-      message: string;
-      date: string;
-      time: string;
-    }[];
+    messages: ContentMessagesHistoricProps[];
   };
   chatContent: boolean;
   setChatContent: Function;
+};
+
+export interface ContentMessagesHistoricProps {
+  id: number;
+  sender?: string;
+  message: string;
+  date: string;
+  time: string;
 };

@@ -4,3 +4,7 @@ export interface SendMocks {
   buttonIcon: string;
   buttonTitle: string;
 };
+
+export interface SendProps {
+  onMessageSend: Function;
+};
