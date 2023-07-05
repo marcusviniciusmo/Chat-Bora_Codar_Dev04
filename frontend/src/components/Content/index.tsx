@@ -4,6 +4,7 @@ import { Historic } from "../Historic";
 import { NoChat } from '../NoChat';
 import { Send } from "../Send";
 import { ContentProps, ContentMessagesHistoricProps } from "../../types/Content";
+import { GetLocaleDate, GetLocaleTime } from "../../utils/Functions";
 import { Container } from "./styles";
 
 export function Content(props: ContentProps) {
@@ -22,8 +23,8 @@ export function Content(props: ContentProps) {
     const newMessage:ContentMessagesHistoricProps = {
       id: messagesList.length + 1,
       message: message,
-      date: '',
-      time: ''
+      date: GetLocaleDate(),
+      time: GetLocaleTime()
     };
 
     const updateMessages = [...messagesList, newMessage];
