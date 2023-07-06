@@ -49,17 +49,31 @@ export const Status = styled.div`
 `;
 
 export const Ellipse = styled.div`
-  background: var(--color-status-online);
   width: 0.8rem;
   height: 0.8rem;
   border-radius: 50%;
+
+  &.Online {
+    background: var(--color-status-online);;
+  }
+
+  &.Offline {
+    background: var(--color-status-offline);;
+  }
 `;
 
 export const Description = styled.span`
-  color: var(--color-status-online);
   font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.4rem;
+
+  &.Online {
+    color: var(--color-status-online);
+  }
+
+  &.Offline {
+    color: var(--color-status-offline);
+  }
 `;
 
 export const Close = styled.div`

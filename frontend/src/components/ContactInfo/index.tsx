@@ -24,8 +24,12 @@ export function ContactInfo(props: ContactInfoProps) {
           <Styles.Name>{props.name}</Styles.Name>
 
           <Styles.Status>
-            <Styles.Ellipse />
-            <Styles.Description>{props.status}</Styles.Description>
+            <Styles.Ellipse className={props.status} />
+            <Styles.Description
+              className={props.status}
+            >
+              {props.status}
+            </Styles.Description>
           </Styles.Status>
         </Styles.Info>
 
