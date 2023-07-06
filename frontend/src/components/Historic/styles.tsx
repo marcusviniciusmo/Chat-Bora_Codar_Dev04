@@ -7,3 +7,8 @@ export const Container = styled.div`
   align-items: center;
   align-self: stretch;
 `;
+
+export const Content = styled.div`
+  max-height: 30rem;
+  overflow-y: auto;
+`;
