@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SendButtonMocks } from "../../types/Send";
 
 export const Container = styled.div`
   width: var(--width-chat-window);
@@ -34,12 +35,13 @@ export const Field = styled.input`
   }
 `;
 
-export const Button = styled.div`
+export const Button = styled.div<SendButtonMocks>`
   width: 2.4rem;
   height: 2.4rem;
   position: absolute;
   top: 40%;
   right: 2%;
+  visibility: ${(props) => props.visible ? 'visible' : 'hidden'};
 `;
 
 export const Icon = styled.img`

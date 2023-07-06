@@ -1,3 +1,7 @@
+export interface SendButtonMocks {
+  visible: string;
+};
+
 export interface SendMocks {
   typeField: string;
   placeholder: string;

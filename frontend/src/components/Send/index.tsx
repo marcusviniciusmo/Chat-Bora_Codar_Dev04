@@ -25,7 +25,7 @@ export function Send(props: SendProps) {
         onChange={e => setMessageTyped(e.target.value)}
       />
 
-      <Button>
+      <Button visible={messageTyped}>
         <Icon
           src={mockedData?.buttonIcon}
           title={mockedData?.buttonTitle}
