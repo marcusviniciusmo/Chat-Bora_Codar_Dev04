@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: var(--width-chat-window);
   height: 6.6rem;
+  margin-top: 1rem;
   padding: 0rem;
   display: flex;
   flex-direction: column;
