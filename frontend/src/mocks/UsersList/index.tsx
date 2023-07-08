@@ -98,5 +98,47 @@ export const MockedData: UsersListMocks[] = [
         time: '11:32'
       }
     ]
+  },
+  {
+    id: 5,
+    name: 'Amor',
+    avatar: '',
+    status: 'Offline',
+    messages: [
+      {
+        id: 1,
+        sender: 'Amor',
+        message: 'Te vejo mais tarde. Bjus!!',
+        date: 'Yesterday',
+        time: '11:30'
+      },
+      {
+        id: 2,
+        message: 'Ok, Bjos.😘😘😘',
+        date: 'Yesterday',
+        time: '11:32'
+      }
+    ]
+  },
+  {
+    id: 6,
+    name: 'Amor',
+    avatar: '',
+    status: 'Offline',
+    messages: [
+      {
+        id: 1,
+        sender: 'Amor',
+        message: 'Te vejo mais tarde. Bjus!!',
+        date: 'Yesterday',
+        time: '11:30'
+      },
+      {
+        id: 2,
+        message: 'Ok, Bjos.😘😘😘',
+        date: 'Yesterday',
+        time: '11:32'
+      }
+    ]
   }
 ];

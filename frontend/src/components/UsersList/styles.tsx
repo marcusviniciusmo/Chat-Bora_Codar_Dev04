@@ -23,6 +23,11 @@ export const UserContainer = styled.div`
   }
 `;
 
+export const List = styled.div`
+  height: 35rem;
+  overflow-y: scroll;
+`;
+
 export const Info = styled.div`
   width: 17rem;
   display: flex;

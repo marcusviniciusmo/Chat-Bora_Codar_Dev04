@@ -18,7 +18,7 @@ export function UsersList(props: UsersListProps) {
     const name = item.name.toLowerCase().includes(inputSearch.toLowerCase());
 
     const lastMessage = item.messages[item.messages.length - 1].message.
-    toLowerCase().includes(inputSearch.toLowerCase());
+      toLowerCase().includes(inputSearch.toLowerCase());
 
     return name || lastMessage;
   });
@@ -40,29 +40,32 @@ export function UsersList(props: UsersListProps) {
     <Styles.Container>
       <Search inputSearch={inputSearch} setInput={setInputSearch} />
 
-      {
-        filteredList. length > 0
-        ? filteredList.map((contact) => {
-          return (
-            <Styles.UserContainer
-              key={contact.id}
-              title={contact.name}
-              onClick={() => setChatContact(contact)}
-            >
-              <Avatar imageUrl={contact.avatar} />
+      <Styles.List>
 
-              <Styles.Info>
-                <Styles.Name>{contact.name}</Styles.Name>
+        {
+          filteredList.length > 0
+            ? filteredList.map((contact) => {
+              return (
+                <Styles.UserContainer
+                  key={contact.id}
+                  title={contact.name}
+                  onClick={() => setChatContact(contact)}
+                >
+                  <Avatar imageUrl={contact.avatar} />
 
-                <Styles.Message>{getLastMessage(contact)}</Styles.Message>
-              </Styles.Info>
+                  <Styles.Info>
+                    <Styles.Name>{contact.name}</Styles.Name>
 
-              <Styles.DateTime>{getDateFromMessage(contact)}</Styles.DateTime>
-            </Styles.UserContainer>
-          )
-        })
-        : <NoUser />
-      }
+                    <Styles.Message>{getLastMessage(contact)}</Styles.Message>
+                  </Styles.Info>
+
+                  <Styles.DateTime>{getDateFromMessage(contact)}</Styles.DateTime>
+                </Styles.UserContainer>
+              )
+            })
+            : <NoUser />
+        }
+      </  Styles.List>
     </Styles.Container>
   );
 };
