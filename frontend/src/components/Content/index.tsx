@@ -11,8 +11,8 @@ export function Content(props: ContentProps) {
   const [messagesList, setMessagesList] = useState<ContentMessagesHistoricProps[]>([]);
 
   useEffect(() => {
-    setMessagesList(props.contactSelected.messages);
-  }, [props.contactSelected.messages]);
+    setMessagesList(props.contactSelected?.messages || []);
+  }, [props.contactSelected]);
 
   const getTimeFromLastMessage = () => {
     return props.contactSelected.
