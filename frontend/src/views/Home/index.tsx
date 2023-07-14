@@ -1,11 +1,11 @@
 import { Chat } from "../../components/Chat";
+import { Container } from './styles';
 
 export function Home() {
   return (
-    <>
-      <h1>HOME View</h1>
+    <Container>
 
-      <Chat />
-    </>
-  );
+    <Chat />
+    </Container>
+  )
 };
