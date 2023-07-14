@@ -24,10 +24,18 @@ export function UsersList(props: UsersListProps) {
   });
 
   const getLastMessage = (contact: UsersListMocks) => {
+    if (contact.id === props.contactSelected?.id) {
+      return props.contactSelected.messages[props.contactSelected.messages.length - 1].message;
+    };
+
     return contact.messages[contact.messages.length - 1].message;
   };
 
   const getDateFromMessage = (contact: UsersListMocks) => {
+    if (contact.id === props.contactSelected?.id) {
+      return props.contactSelected.messages[props.contactSelected.messages.length - 1].date;
+    };
+
     return contact.messages[contact.messages.length - 1].date;
   };
 

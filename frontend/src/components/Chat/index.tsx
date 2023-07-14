@@ -31,6 +31,7 @@ export function Chat() {
         chatContent={chatContent}
         setChatContent={setChatContent}
         contactSelected={contactSelected!}
+        setContactSelected={setContactSelected}
       />
     </Container>
   );

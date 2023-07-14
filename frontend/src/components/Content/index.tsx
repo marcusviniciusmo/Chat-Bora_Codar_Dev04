@@ -29,6 +29,11 @@ export function Content(props: ContentProps) {
 
     const updateMessages = [...messagesList, newMessage];
     setMessagesList(updateMessages);
+
+    props.setContactSelected({
+      ...props.contactSelected,
+      messages: updateMessages
+    });
   };
 
   return (
