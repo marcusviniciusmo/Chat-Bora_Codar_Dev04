@@ -9,5 +9,5 @@ export const GetLocaleTime = () => {
 export const GetLocaleDate = () => {
   const date = new Date();
 
-  return format(date, 'EEEE');
+  return format(date, 'dd/LL/yy');
 };
