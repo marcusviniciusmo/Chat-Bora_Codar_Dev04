@@ -29,4 +29,9 @@ export const Icons = styled.div`
 
 export const Icon = styled.div`
   cursor: pointer;
+
+  &:hover {
+    transform: scale(1.3);
+    transition: all 0.5s;
+  }
 `;
