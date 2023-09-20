@@ -26,6 +26,7 @@ export interface UsersListProps {
       time: string;
     }[];
   };
+  userContentUpdated: UsersListMocks;
   setContactSelected: Function;
   setChatContent:Function;
 };

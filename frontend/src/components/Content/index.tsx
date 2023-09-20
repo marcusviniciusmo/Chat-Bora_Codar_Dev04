@@ -14,6 +14,10 @@ export function Content(props: ContentProps) {
     setMessagesList(props.contactSelected?.messages || []);
   }, [props.contactSelected]);
 
+  useEffect(() => {
+    props.setUserContent(props.contactSelected)
+  }, [props.contactSelected]);
+
   const getTimeFromLastMessage = () => {
     return props.contactSelected.
     messages[props.contactSelected.messages.length - 1].time;

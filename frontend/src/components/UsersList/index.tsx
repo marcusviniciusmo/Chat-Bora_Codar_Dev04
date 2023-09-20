@@ -9,18 +9,40 @@ import { Avatar } from "../Avatar";
 export function UsersList(props: UsersListProps) {
   const [mockedData, setMockedData] = useState<UsersListMocks[]>([]);
   const [inputSearch, setInputSearch] = useState<string>('');
+  const [userContent, setUserContent] = useState<UsersListMocks[]>([]);
 
   useEffect(() => {
     setMockedData(MockedData);
   }, []);
 
-  const filteredList = mockedData.filter((item) => {
+  useEffect(() => {
+    setUserContent(mockedData);
+  }, [mockedData]);
+
+  useEffect(() => {
+    updateUserContent();
+  }, [props.contactSelected]);
+
+  const filteredList = userContent.filter((item) => {
     const name = item.name.toLowerCase().includes(inputSearch.toLowerCase());
 
     const lastMessage = item.messages[item.messages.length - 1].message.
       toLowerCase().includes(inputSearch.toLowerCase());
 
     return name || lastMessage;
+  });
+
+  const orderedList = filteredList.sort((a, b) => {
+    const lastMessageA = a.messages.length > 0 ? a.messages[a.messages.length - 1].date : '';
+    const lastMessageB = b.messages.length > 0 ? b.messages[b.messages.length - 1].date : '';
+
+    if (lastMessageA > lastMessageB) {
+      return 1;
+    } else if (lastMessageA < lastMessageB) {
+      return -1;
+    } else {
+      return 0;
+    };
   });
 
   const getLastMessage = (contact: UsersListMocks) => {
@@ -44,6 +66,24 @@ export function UsersList(props: UsersListProps) {
     props.setChatContent(true);
   };
 
+  const updateUserContent = () => {
+    setUserContent((prevUserContent) => {
+      return prevUserContent.map((user) => {
+        if (user.id === props.contactSelected.id) {
+          return {
+            ...user,
+            name: props.contactSelected.name,
+            avatar: props.contactSelected.avatar,
+            status: props.contactSelected.status,
+            messages: props.contactSelected.messages
+          }
+        }
+
+        return user;
+      })
+    });
+  };
+
   return (
     <Styles.Container>
       <Search inputSearch={inputSearch} setInput={setInputSearch} />
@@ -51,8 +91,8 @@ export function UsersList(props: UsersListProps) {
       <Styles.List>
 
         {
-          filteredList.length > 0
-            ? filteredList.map((contact) => {
+          orderedList.length > 0
+            ? orderedList.map((contact) => {
               return (
                 <Styles.UserContainer
                   key={contact.id}

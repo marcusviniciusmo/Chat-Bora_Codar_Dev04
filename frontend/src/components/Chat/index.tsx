@@ -4,12 +4,14 @@ import { User } from "../User";
 import { UsersList } from "../UsersList";
 import { MockedData } from "../../mocks/Chat";
 import { ChatMocks } from "../../types/Chat";
+import { UsersListMocks } from "../../types/UsersList";
 import { Container, UserArea } from "./styles";
 
 export function Chat() {
   const [mockedData, setMockedData] = useState<ChatMocks>();
   const [chatContent, setChatContent] = useState<boolean>(false);
   const [contactSelected, setContactSelected] = useState(mockedData);
+  const [userContent, setUserContent] = useState<UsersListMocks>();
 
   useEffect(() => {
     setMockedData(MockedData);
@@ -21,6 +23,7 @@ export function Chat() {
         <User />
 
         <UsersList
+          userContentUpdated={userContent!}
           setChatContent={setChatContent}
           contactSelected={contactSelected!}
           setContactSelected={setContactSelected}
@@ -32,6 +35,7 @@ export function Chat() {
         setChatContent={setChatContent}
         contactSelected={contactSelected!}
         setContactSelected={setContactSelected}
+        setUserContent={setUserContent}
       />
     </Container>
   );

@@ -9,6 +9,7 @@ export interface ContentProps {
   chatContent: boolean;
   setChatContent: Function;
   setContactSelected: Function;
+  setUserContent: Function;
 };
 
 export interface ContentMessagesHistoricProps {
